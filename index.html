@@ -10,6 +10,78 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+
+      /* ---- Logo ---- */
+      .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.02);
+        }
+        .logo-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            color: #7eddb0;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary), var(--green));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 14px;
+        }
+        .logo:hover .logo-icon::after {
+            opacity: 0.15;
+        }
+        .logo-icon i {
+            font-size: 22px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover .logo-icon i {
+            transform: rotate(8deg) scale(1.05);
+        }
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .logo-text strong {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            color: #ecfbf5;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.30);
+            transition: color 0.3s ease;
+        }
+        .logo:hover .logo-text strong {
+            color: #7eddb0;
+        }
+        .logo-text small {
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 2.8px;
+            color: #7eddb0;
+            text-transform: uppercase;
+            margin-top: 1px;
+            opacity: 0.8;
+        }
 /* ============ THEME ============ */
 :root{
   --maroon:#4d0a1e; --maroon-2:#6d0f2b; --maroon-3:#8b1538;
@@ -573,8 +645,10 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
 <!-- ===== HEADER ===== -->
 <header class="header">
   <div class="header-inner">
-    <a class="brand" href="#top">
-      <div class="logo">MLG</div>
+    <div class="logo-icon">
+      <img src="logo.png" alt="BioGenius Logo">
+  </div>
+
       <div class="brand-text">
         <h1>MAHALAXMI GARMENTS</h1>
         <span>Elegance in Every Thread</span>
@@ -625,7 +699,7 @@ input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;bac
       <div class="mono-card">
         <span class="mono-small">Mahalaxmi</span>
         <div class="divider"></div>
-        <span class="mono-big">MLG</span>
+        <img src="3.jfif" alt="">
         <div class="divider"></div>
         <span class="mono-small">Garments</span>
       </div>
